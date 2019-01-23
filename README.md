@@ -11,7 +11,8 @@ debug=false # Enable debug logs.
 trace=false # Enable trace logs.
 ```
 
-# LOGGING
+###### LOGGING
+```java
 logging.config= # Location of the logging configuration file. For instance, `classpath:logback.xml` for Logback.
 logging.exception-conversion-word=%wEx # Conversion word used when logging exceptions.
 logging.file.max-history=0 # Maximum of archive log files to keep. Only supported with the default logback setup.
@@ -25,17 +26,24 @@ logging.pattern.dateformat=yyyy-MM-dd HH:mm:ss.SSS # Appender pattern for log da
 logging.pattern.file= # Appender pattern for output to a file. Supported only with the default Logback setup.
 logging.pattern.level=%5p # Appender pattern for log level. Supported only with the default Logback setup.
 logging.register-shutdown-hook=false # Register a shutdown hook for the logging system when it is initialized.
+```
 
-# AOP
+######  AOP
+```java
 spring.aop.auto=true # Add @EnableAspectJAutoProxy.
 spring.aop.proxy-target-class=true # Whether subclass-based (CGLIB) proxies are to be created (true), as opposed to standard Java interface-based proxies (false).
+```
 
-# IDENTITY (ContextIdApplicationContextInitializer)
+######  IDENTITY (ContextIdApplicationContextInitializer)
+```java
 spring.application.name= # Application name.
+```
 
-# ADMIN (SpringApplicationAdminJmxAutoConfiguration)
+###### ADMIN (SpringApplicationAdminJmxAutoConfiguration)
+```java
 spring.application.admin.enabled=false # Whether to enable admin features for the application.
 spring.application.admin.jmx-name=org.springframework.boot:type=Admin,name=SpringApplication # JMX name of the application admin MBean.
+```
 
 # AUTO-CONFIGURATION
 spring.autoconfigure.exclude= # Auto-configuration classes to exclude.

@@ -162,7 +162,8 @@ spring.profiles.active= # Comma-separated list of active profiles. Can be overri
 spring.profiles.include= # Unconditionally activate the specified comma-separated list of profiles (or list of profiles if using YAML).
 ```
 
-# QUARTZ SCHEDULER (QuartzProperties)
+###### QUARTZ SCHEDULER (QuartzProperties)
+```java
 spring.quartz.auto-startup=true # Whether to automatically start the scheduler after initialization.
 spring.quartz.jdbc.comment-prefix=-- # Prefix for single-line comments in SQL initialization scripts.
 spring.quartz.jdbc.initialize-schema=embedded # Database schema initialization mode.
@@ -173,32 +174,42 @@ spring.quartz.properties.*= # Additional Quartz Scheduler properties.
 spring.quartz.scheduler-name=quartzScheduler # Name of the scheduler.
 spring.quartz.startup-delay=0s # Delay after which the scheduler is started once initialization completes.
 spring.quartz.wait-for-jobs-to-complete-on-shutdown=false # Whether to wait for running jobs to complete on shutdown.
+```
 
-# REACTOR (ReactorCoreProperties)
+###### REACTOR (ReactorCoreProperties)
+```java
 spring.reactor.stacktrace-mode.enabled=false # Whether Reactor should collect stacktrace information at runtime.
+```
 
-# SENDGRID (SendGridAutoConfiguration)
+###### SENDGRID (SendGridAutoConfiguration)
+```java
 spring.sendgrid.api-key= # SendGrid API key.
 spring.sendgrid.proxy.host= # SendGrid proxy host.
 spring.sendgrid.proxy.port= # SendGrid proxy port.
+```
 
-# TASK EXECUTION  (TaskExecutionProperties)
+###### TASK EXECUTION  (TaskExecutionProperties)
+```java
 spring.task.execution.pool.allow-core-thread-timeout=true # Whether core threads are allowed to time out. This enables dynamic growing and shrinking of the pool.
 spring.task.execution.pool.core-size=8 # Core number of threads.
 spring.task.execution.pool.keep-alive=60s # Time limit for which threads may remain idle before being terminated.
 spring.task.execution.pool.max-size= # Maximum allowed number of threads. If tasks are filling up the queue, the pool can expand up to that size to accommodate the load. Ignored if the queue is unbounded.
 spring.task.execution.pool.queue-capacity= # Queue capacity. An unbounded capacity does not increase the pool and therefore ignores the "max-size" property.
 spring.task.execution.thread-name-prefix=task- # Prefix to use for the names of newly created threads.
+```
 
-# TASK SCHEDULING  (TaskSchedulingProperties)
+###### TASK SCHEDULING  (TaskSchedulingProperties)
+```java
 spring.task.scheduling.pool.size=1 # Maximum allowed number of threads.
 spring.task.scheduling.thread-name-prefix=scheduling- # Prefix to use for the names of newly created threads.
+```
 
-# ----------------------------------------
-# WEB PROPERTIES
-# ----------------------------------------
+#### ----------------------------------------
+#### WEB PROPERTIES
+#### ----------------------------------------
 
-# EMBEDDED SERVER CONFIGURATION (ServerProperties)
+###### EMBEDDED SERVER CONFIGURATION (ServerProperties)
+```java
 server.address= # Network address to which the server should bind.
 server.compression.enabled=false # Whether response compression is enabled.
 server.compression.excluded-user-agents= # Comma-separated list of user agents for which responses should not be compressed.
@@ -311,8 +322,10 @@ server.undertow.eager-filter-init=true # Whether servlet filters should be initi
 server.undertow.io-threads= # Number of I/O threads to create for the worker. The default is derived from the number of available processors.
 server.undertow.max-http-post-size=-1B # Maximum size of the HTTP post content. When the value is -1, the default, the size is unlimited.
 server.undertow.worker-threads= # Number of worker threads. The default is 8 times the number of I/O threads.
+```
 
-# FREEMARKER (FreeMarkerProperties)
+###### FREEMARKER (FreeMarkerProperties)
+```java
 spring.freemarker.allow-request-override=false # Whether HttpServletRequest attributes are allowed to override (hide) controller generated model attributes of the same name.
 spring.freemarker.allow-session-override=false # Whether HttpSession attributes are allowed to override (hide) controller generated model attributes of the same name.
 spring.freemarker.cache=false # Whether to enable template caching.
@@ -330,8 +343,10 @@ spring.freemarker.settings.*= # Well-known FreeMarker keys which are passed to F
 spring.freemarker.suffix=.ftl # Suffix that gets appended to view names when building a URL.
 spring.freemarker.template-loader-path=classpath:/templates/ # Comma-separated list of template paths.
 spring.freemarker.view-names= # White list of view names that can be resolved.
+```
 
-# GROOVY TEMPLATES (GroovyTemplateProperties)
+###### GROOVY TEMPLATES (GroovyTemplateProperties)
+```java
 spring.groovy.template.allow-request-override=false # Whether HttpServletRequest attributes are allowed to override (hide) controller generated model attributes of the same name.
 spring.groovy.template.allow-session-override=false # Whether HttpSession attributes are allowed to override (hide) controller generated model attributes of the same name.
 spring.groovy.template.cache=false # Whether to enable template caching.
@@ -348,11 +363,15 @@ spring.groovy.template.request-context-attribute= # Name of the RequestContext a
 spring.groovy.template.resource-loader-path=classpath:/templates/ # Template path.
 spring.groovy.template.suffix=.tpl # Suffix that gets appended to view names when building a URL.
 spring.groovy.template.view-names= # White list of view names that can be resolved.
+```
 
-# SPRING HATEOAS (HateoasProperties)
+###### SPRING HATEOAS (HateoasProperties)
+```java
 spring.hateoas.use-hal-as-default-json-media-type=true # Whether application/hal+json responses should be sent to requests that accept application/json.
+```
 
-# HTTP (HttpProperties)
+###### HTTP (HttpProperties)
+```java
 spring.http.converters.preferred-json-mapper= # Preferred JSON mapper to use for HTTP message conversion. By default, auto-detected according to the environment.
 spring.http.encoding.charset=UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly.
 spring.http.encoding.enabled=true # Whether to enable http encoding support.
@@ -361,16 +380,20 @@ spring.http.encoding.force-request= # Whether to force the encoding to the confi
 spring.http.encoding.force-response= # Whether to force the encoding to the configured charset on HTTP responses.
 spring.http.encoding.mapping= # Locale in which to encode mapping.
 spring.http.log-request-details=false # Whether logging of (potentially sensitive) request details at DEBUG and TRACE level is allowed.
+```
 
-# MULTIPART (MultipartProperties)
+###### MULTIPART (MultipartProperties)
+```java
 spring.servlet.multipart.enabled=true # Whether to enable support of multipart uploads.
 spring.servlet.multipart.file-size-threshold=0B # Threshold after which files are written to disk.
 spring.servlet.multipart.location= # Intermediate location of uploaded files.
 spring.servlet.multipart.max-file-size=1MB # Max file size.
 spring.servlet.multipart.max-request-size=10MB # Max request size.
 spring.servlet.multipart.resolve-lazily=false # Whether to resolve the multipart request lazily at the time of file or parameter access.
+```
 
-# JACKSON (JacksonProperties)
+###### JACKSON (JacksonProperties)
+```java
 spring.jackson.date-format= # Date format string or a fully-qualified date format class name. For instance, `yyyy-MM-dd HH:mm:ss`.
 spring.jackson.default-property-inclusion= # Controls the inclusion of properties during serialization. Configured with one of the values in Jackson's JsonInclude.Include enumeration.
 spring.jackson.deserialization.*= # Jackson on/off features that affect the way Java objects are deserialized.
@@ -383,8 +406,10 @@ spring.jackson.property-naming-strategy= # One of the constants on Jackson's Pro
 spring.jackson.serialization.*= # Jackson on/off features that affect the way Java objects are serialized.
 spring.jackson.time-zone= #  Time zone used when formatting dates. For instance, "America/Los_Angeles" or "GMT+10".
 spring.jackson.visibility.*= # Jackson visibility thresholds that can be used to limit which methods (and fields) are auto-detected.
+```
 
-# GSON (GsonProperties)
+###### GSON (GsonProperties)
+```java
 spring.gson.date-format= # Format to use when serializing Date objects.
 spring.gson.disable-html-escaping= # Whether to disable the escaping of HTML characters such as '<', '>', etc.
 spring.gson.disable-inner-class-serialization= # Whether to exclude inner classes during serialization.
@@ -396,21 +421,26 @@ spring.gson.lenient= # Whether to be lenient about parsing JSON that doesn't con
 spring.gson.long-serialization-policy= # Serialization policy for Long and long types.
 spring.gson.pretty-printing= # Whether to output serialized JSON that fits in a page for pretty printing.
 spring.gson.serialize-nulls= # Whether to serialize null fields.
+```
 
-# JERSEY (JerseyProperties)
+###### JERSEY (JerseyProperties)
+```java
 spring.jersey.application-path= # Path that serves as the base URI for the application. If specified, overrides the value of "@ApplicationPath".
 spring.jersey.filter.order=0 # Jersey filter chain order.
 spring.jersey.init.*= # Init parameters to pass to Jersey through the servlet or filter.
 spring.jersey.servlet.load-on-startup=-1 # Load on startup priority of the Jersey servlet.
 spring.jersey.type=servlet # Jersey integration type.
+```
 
-# SPRING LDAP (LdapProperties)
+###### SPRING LDAP (LdapProperties)
+```java
 spring.ldap.anonymous-read-only=false # Whether read-only operations should use an anonymous environment.
 spring.ldap.base= # Base suffix from which all operations should originate.
 spring.ldap.base-environment.*= # LDAP specification settings.
 spring.ldap.password= # Login password of the server.
 spring.ldap.urls= # LDAP URLs of the server.
 spring.ldap.username= # Login username of the server.
+```
 
 # EMBEDDED LDAP (EmbeddedLdapProperties)
 spring.ldap.embedded.base-dn= # List of base DNs.

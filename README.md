@@ -45,10 +45,13 @@ spring.application.admin.enabled=false # Whether to enable admin features for th
 spring.application.admin.jmx-name=org.springframework.boot:type=Admin,name=SpringApplication # JMX name of the application admin MBean.
 ```
 
-# AUTO-CONFIGURATION
+###### AUTO-CONFIGURATION
+```java
 spring.autoconfigure.exclude= # Auto-configuration classes to exclude.
+```
 
-# BANNER
+###### BANNER
+```java
 spring.banner.charset=UTF-8 # Banner file encoding.
 spring.banner.location=classpath:banner.txt # Banner text resource location.
 spring.banner.image.location=classpath:banner.gif # Banner image file location (jpg or png can also be used).
@@ -56,11 +59,15 @@ spring.banner.image.width=76 # Width of the banner image in chars.
 spring.banner.image.height= # Height of the banner image in chars (default based on image height).
 spring.banner.image.margin=2 # Left hand image margin in chars.
 spring.banner.image.invert=false # Whether images should be inverted for dark terminal themes.
+```
 
-# SPRING CORE
+###### SPRING CORE
+```java
 spring.beaninfo.ignore=true # Whether to skip search of BeanInfo classes.
+```
 
-# SPRING CACHE (CacheProperties)
+###### SPRING CACHE (CacheProperties)
+```java
 spring.cache.cache-names= # Comma-separated list of cache names to create if supported by the underlying cache manager.
 spring.cache.caffeine.spec= # The spec to use to create caches. See CaffeineSpec for more details on the spec format.
 spring.cache.couchbase.expiration= # Entry expiration. By default the entries never expire. Note that this value is ultimately converted to seconds.
@@ -73,28 +80,38 @@ spring.cache.redis.key-prefix= # Key prefix.
 spring.cache.redis.time-to-live= # Entry expiration. By default the entries never expire.
 spring.cache.redis.use-key-prefix=true # Whether to use the key prefix when writing to Redis.
 spring.cache.type= # Cache type. By default, auto-detected according to the environment.
+```
 
-# SPRING CONFIG - using environment property only (ConfigFileApplicationListener)
+###### SPRING CONFIG - using environment property only (ConfigFileApplicationListener)
+```java
 spring.config.additional-location= # Config file locations used in addition to the defaults.
 spring.config.location= # Config file locations that replace the defaults.
 spring.config.name=application # Config file name.
+```
 
-# HAZELCAST (HazelcastProperties)
+###### HAZELCAST (HazelcastProperties)
+```java
 spring.hazelcast.config= # The location of the configuration file to use to initialize Hazelcast.
+```
 
-# PROJECT INFORMATION (ProjectInfoProperties)
+###### PROJECT INFORMATION (ProjectInfoProperties)
+```java
 spring.info.build.encoding=UTF-8 # File encoding.
 spring.info.build.location=classpath:META-INF/build-info.properties # Location of the generated build-info.properties file.
 spring.info.git.encoding=UTF-8 # File encoding.
 spring.info.git.location=classpath:git.properties # Location of the generated git.properties file.
+```
 
-# JMX
+###### JMX
+```java
 spring.jmx.default-domain= # JMX domain name.
 spring.jmx.enabled=true # Expose management beans to the JMX domain.
 spring.jmx.server=mbeanServer # MBeanServer bean name.
 spring.jmx.unique-names=false # Whether unique runtime object names should be ensured.
+```
 
-# Email (MailProperties)
+###### Email (MailProperties)
+```java
 spring.mail.default-encoding=UTF-8 # Default MimeMessage encoding.
 spring.mail.host= # SMTP server host. For instance, `smtp.example.com`.
 spring.mail.jndi-name= # Session JNDI name. When set, takes precedence over other Session settings.
@@ -104,34 +121,46 @@ spring.mail.properties.*= # Additional JavaMail Session properties.
 spring.mail.protocol=smtp # Protocol used by the SMTP server.
 spring.mail.test-connection=false # Whether to test that the mail server is available on startup.
 spring.mail.username= # Login user of the SMTP server.
+```
 
-# APPLICATION SETTINGS (SpringApplication)
+###### APPLICATION SETTINGS (SpringApplication)
+```java
 spring.main.allow-bean-definition-overriding=false # Whether bean definition overriding, by registering a definition with the same name as an existing definition, is allowed.
 spring.main.banner-mode=console # Mode used to display the banner when the application runs.
 spring.main.sources= # Sources (class names, package names, or XML resource locations) to include in the ApplicationContext.
 spring.main.web-application-type= # Flag to explicitly request a specific type of web application. If not set, auto-detected based on the classpath.
+```
 
-# FILE ENCODING (FileEncodingApplicationListener)
+###### FILE ENCODING (FileEncodingApplicationListener)
+```java
 spring.mandatory-file-encoding= # Expected character encoding the application must use.
+```
 
-# INTERNATIONALIZATION (MessageSourceProperties)
+###### INTERNATIONALIZATION (MessageSourceProperties)
+```java
 spring.messages.always-use-message-format=false # Whether to always apply the MessageFormat rules, parsing even messages without arguments.
 spring.messages.basename=messages # Comma-separated list of basenames (essentially a fully-qualified classpath location), each following the ResourceBundle convention with relaxed support for slash based locations.
 spring.messages.cache-duration= # Loaded resource bundle files cache duration. When not set, bundles are cached forever. If a duration suffix is not specified, seconds will be used.
 spring.messages.encoding=UTF-8 # Message bundles encoding.
 spring.messages.fallback-to-system-locale=true # Whether to fall back to the system Locale if no files for a specific Locale have been found.
 spring.messages.use-code-as-default-message=false # Whether to use the message code as the default message instead of throwing a "NoSuchMessageException". Recommended during development only.
+```
 
-# OUTPUT
+###### OUTPUT
+```java
 spring.output.ansi.enabled=detect # Configures the ANSI output.
+```
 
-# PID FILE (ApplicationPidFileWriter)
+###### PID FILE (ApplicationPidFileWriter)
+```java
 spring.pid.fail-on-write-error= # Fails if ApplicationPidFileWriter is used but it cannot write the PID file.
 spring.pid.file= # Location of the PID file to write (if ApplicationPidFileWriter is used).
-
-# PROFILES
+```
+###### PROFILES
+```java
 spring.profiles.active= # Comma-separated list of active profiles. Can be overridden by a command line switch.
 spring.profiles.include= # Unconditionally activate the specified comma-separated list of profiles (or list of profiles if using YAML).
+```
 
 # QUARTZ SCHEDULER (QuartzProperties)
 spring.quartz.auto-startup=true # Whether to automatically start the scheduler after initialization.

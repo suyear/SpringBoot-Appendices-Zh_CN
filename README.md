@@ -1,17 +1,15 @@
 Source URL : https://docs.spring.io/spring-boot/docs/2.2.0.BUILD-SNAPSHOT/reference/html/appendix.html#appendix
 
-###### ===================================================================
 ###### COMMON SPRING BOOT PROPERTIES
-######
+
 ###### This sample file is provided as a guideline. Do NOT copy it in its
 ###### entirety to your own application.               ^^^
-###### ===================================================================
 
-
-###### ----------------------------------------
 ###### CORE PROPERTIES
-###### ----------------------------------------
-```debug=false # Enable debug logs.<br/>trace=false # Enable trace logs.```
+```java
+debug=false # Enable debug logs.    
+trace=false # Enable trace logs.
+```
 
 # LOGGING
 logging.config= # Location of the logging configuration file. For instance, `classpath:logback.xml` for Logback.

@@ -708,10 +708,13 @@ spring.couchbase.env.timeouts.socket-connect=1000ms # Socket connect connections
 spring.couchbase.env.timeouts.view=7500ms # Regular and geospatial view operations timeout.
 ```
 
-# DAO (PersistenceExceptionTranslationAutoConfiguration)
+###### DAO (PersistenceExceptionTranslationAutoConfiguration)
+```java
 spring.dao.exceptiontranslation.enabled=true # Whether to enable the PersistenceExceptionTranslationPostProcessor.
+```
 
-# CASSANDRA (CassandraProperties)
+###### CASSANDRA (CassandraProperties)
+```java
 spring.data.cassandra.cluster-name= # Name of the Cassandra cluster.
 spring.data.cassandra.compression=none # Compression supported by the Cassandra binary protocol.
 spring.data.cassandra.connect-timeout= # Socket option: connection time out.
@@ -732,25 +735,35 @@ spring.data.cassandra.serial-consistency-level= # Queries serial consistency lev
 spring.data.cassandra.schema-action=none # Schema action to take at startup.
 spring.data.cassandra.ssl=false # Enable SSL support.
 spring.data.cassandra.username= # Login user of the server.
+```
 
-# DATA COUCHBASE (CouchbaseDataProperties)
+###### DATA COUCHBASE (CouchbaseDataProperties)
+```java
 spring.data.couchbase.auto-index=false # Automatically create views and indexes.
 spring.data.couchbase.consistency=read-your-own-writes # Consistency to apply by default on generated queries.
 spring.data.couchbase.repositories.type=auto # Type of Couchbase repositories to enable.
+```
 
-# ELASTICSEARCH (ElasticsearchProperties)
+###### ELASTICSEARCH (ElasticsearchProperties)
+```java
 spring.data.elasticsearch.cluster-name=elasticsearch # Elasticsearch cluster name.
 spring.data.elasticsearch.cluster-nodes= # Comma-separated list of cluster node addresses.
 spring.data.elasticsearch.properties.*= # Additional properties used to configure the client.
 spring.data.elasticsearch.repositories.enabled=true # Whether to enable Elasticsearch repositories.
+```
 
-# DATA JDBC
+###### DATA JDBC
+```java
 spring.data.jdbc.repositories.enabled=true # Whether to enable JDBC repositories.
+```
 
-# DATA LDAP
+###### DATA LDAP
+```java
 spring.data.ldap.repositories.enabled=true # Whether to enable LDAP repositories.
+```
 
-# MONGODB (MongoProperties)
+###### MONGODB (MongoProperties)
+```java
 spring.data.mongodb.authentication-database= # Authentication database name.
 spring.data.mongodb.database= # Database name.
 spring.data.mongodb.field-naming-strategy= # Fully qualified name of the FieldNamingStrategy to use.
@@ -761,11 +774,15 @@ spring.data.mongodb.port= # Mongo server port. Cannot be set with URI.
 spring.data.mongodb.repositories.type=auto # Type of Mongo repositories to enable.
 spring.data.mongodb.uri=mongodb://localhost/test # Mongo database URI. Cannot be set with host, port and credentials.
 spring.data.mongodb.username= # Login user of the mongo server. Cannot be set with URI.
+```
 
-# DATA REDIS
+###### DATA REDIS
+```java
 spring.data.redis.repositories.enabled=true # Whether to enable Redis repositories.
+```
 
-# NEO4J (Neo4jProperties)
+###### NEO4J (Neo4jProperties)
+```java
 spring.data.neo4j.auto-index=none # Auto index mode.
 spring.data.neo4j.embedded.enabled=true # Whether to enable embedded mode if the embedded driver is available.
 spring.data.neo4j.open-in-view=true # Register OpenSessionInViewInterceptor. Binds a Neo4j Session to the thread for the entire processing of the request.
@@ -773,8 +790,10 @@ spring.data.neo4j.password= # Login password of the server.
 spring.data.neo4j.repositories.enabled=true # Whether to enable Neo4j repositories.
 spring.data.neo4j.uri= # URI used by the driver. Auto-detected by default.
 spring.data.neo4j.username= # Login user of the server.
+```
 
-# DATA REST (RepositoryRestProperties)
+###### DATA REST (RepositoryRestProperties)
+```java
 spring.data.rest.base-path= # Base path to be used by Spring Data REST to expose repository resources.
 spring.data.rest.default-media-type= # Content type to use as a default when none is specified.
 spring.data.rest.default-page-size= # Default size of pages.
@@ -786,13 +805,17 @@ spring.data.rest.page-param-name= # Name of the URL query string parameter that 
 spring.data.rest.return-body-on-create= # Whether to return a response body after creating an entity.
 spring.data.rest.return-body-on-update= # Whether to return a response body after updating an entity.
 spring.data.rest.sort-param-name= # Name of the URL query string parameter that indicates what direction to sort results.
+```
 
-# SOLR (SolrProperties)
+###### SOLR (SolrProperties)
+```java
 spring.data.solr.host=http://127.0.0.1:8983/solr # Solr host. Ignored if "zk-host" is set.
 spring.data.solr.repositories.enabled=true # Whether to enable Solr repositories.
 spring.data.solr.zk-host= # ZooKeeper host address in the form HOST:PORT.
+```
 
-# DATA WEB (SpringDataWebProperties)
+###### DATA WEB (SpringDataWebProperties)
+```java
 spring.data.web.pageable.default-page-size=20 # Default page size.
 spring.data.web.pageable.max-page-size=2000 # Maximum page size to be accepted.
 spring.data.web.pageable.one-indexed-parameters=false # Whether to expose and assume 1-based page number indexes.
@@ -801,8 +824,10 @@ spring.data.web.pageable.prefix= # General prefix to be prepended to the page nu
 spring.data.web.pageable.qualifier-delimiter=_ # Delimiter to be used between the qualifier and the actual page number and size properties.
 spring.data.web.pageable.size-parameter=size # Page size parameter name.
 spring.data.web.sort.sort-parameter=sort # Sort parameter name.
+```
 
-# DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+###### DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+```java
 spring.datasource.continue-on-error=false # Whether to stop if an error occurs while initializing the database.
 spring.datasource.data= # Data (DML) script resource references.
 spring.datasource.data-username= # Username of the database to execute DML scripts (if different).
@@ -828,8 +853,10 @@ spring.datasource.url= # JDBC URL of the database.
 spring.datasource.username= # Login username of the database.
 spring.datasource.xa.data-source-class-name= # XA datasource fully qualified name.
 spring.datasource.xa.properties= # Properties to pass to the XA data source.
+```
 
-# JEST (Elasticsearch HTTP client) (JestProperties)
+###### JEST (Elasticsearch HTTP client) (JestProperties)
+```java
 spring.elasticsearch.jest.connection-timeout=3s # Connection timeout.
 spring.elasticsearch.jest.multi-threaded=true # Whether to enable connection requests from multiple execution threads.
 spring.elasticsearch.jest.password= # Login password.
@@ -838,30 +865,41 @@ spring.elasticsearch.jest.proxy.port= # Proxy port the HTTP client should use.
 spring.elasticsearch.jest.read-timeout=3s # Read timeout.
 spring.elasticsearch.jest.uris=http://localhost:9200 # Comma-separated list of the Elasticsearch instances to use.
 spring.elasticsearch.jest.username= # Login username.
+```
 
-# Elasticsearch REST clients (RestClientProperties)
+###### Elasticsearch REST clients (RestClientProperties)
+```java
 spring.elasticsearch.rest.password= # Credentials password.
 spring.elasticsearch.rest.uris=http://localhost:9200 # Comma-separated list of the Elasticsearch instances to use.
 spring.elasticsearch.rest.username= # Credentials username.
+```
 
-# H2 Web Console (H2ConsoleProperties)
+###### H2 Web Console (H2ConsoleProperties)
+```java
 spring.h2.console.enabled=false # Whether to enable the console.
 spring.h2.console.path=/h2-console # Path at which the console is available.
 spring.h2.console.settings.trace=false # Whether to enable trace output.
 spring.h2.console.settings.web-allow-others=false # Whether to enable remote access.
+```
 
-# InfluxDB (InfluxDbProperties)
+###### InfluxDB (InfluxDbProperties)
+```java
 spring.influx.password= # Login password.
 spring.influx.url= # URL of the InfluxDB instance to which to connect.
 spring.influx.user= # Login user.
+```
 
-# JOOQ (JooqProperties)
+###### JOOQ (JooqProperties)
+```java
 spring.jooq.sql-dialect= # SQL dialect to use. Auto-detected by default.
+```
 
-# JDBC (JdbcProperties)
+###### JDBC (JdbcProperties)
+```java
 spring.jdbc.template.fetch-size=-1 # Number of rows that should be fetched from the database when more rows are needed.
 spring.jdbc.template.max-rows=-1 # Maximum number of rows.
 spring.jdbc.template.query-timeout= # Query timeout. Default is to use the JDBC driver's default configuration. If a duration suffix is not specified, seconds will be used.
+```
 
 # JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
 spring.data.jpa.repositories.bootstrap-mode=default # Bootstrap mode for JPA repositories.

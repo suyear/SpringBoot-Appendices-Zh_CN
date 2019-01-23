@@ -442,7 +442,8 @@ spring.ldap.urls= # LDAP URLs of the server.
 spring.ldap.username= # Login username of the server.
 ```
 
-# EMBEDDED LDAP (EmbeddedLdapProperties)
+###### EMBEDDED LDAP (EmbeddedLdapProperties)
+```java
 spring.ldap.embedded.base-dn= # List of base DNs.
 spring.ldap.embedded.credential.username= # Embedded LDAP username.
 spring.ldap.embedded.credential.password= # Embedded LDAP password.
@@ -450,8 +451,10 @@ spring.ldap.embedded.ldif=classpath:schema.ldif # Schema (LDIF) script resource 
 spring.ldap.embedded.port=0 # Embedded LDAP port.
 spring.ldap.embedded.validation.enabled=true # Whether to enable LDAP schema validation.
 spring.ldap.embedded.validation.schema= # Path to the custom schema.
+```
 
-# MUSTACHE TEMPLATES (MustacheAutoConfiguration)
+###### MUSTACHE TEMPLATES (MustacheAutoConfiguration)
+```java
 spring.mustache.allow-request-override=false # Whether HttpServletRequest attributes are allowed to override (hide) controller generated model attributes of the same name.
 spring.mustache.allow-session-override=false # Whether HttpSession attributes are allowed to override (hide) controller generated model attributes of the same name.
 spring.mustache.cache=false # Whether to enable template caching.
@@ -466,8 +469,10 @@ spring.mustache.prefix=classpath:/templates/ # Prefix to apply to template names
 spring.mustache.request-context-attribute= # Name of the RequestContext attribute for all views.
 spring.mustache.suffix=.mustache # Suffix to apply to template names.
 spring.mustache.view-names= # White list of view names that can be resolved.
+```
 
-# SPRING MVC (WebMvcProperties)
+###### SPRING MVC (WebMvcProperties)
+```java
 spring.mvc.async.request-timeout= # Amount of time before asynchronous request handling times out.
 spring.mvc.contentnegotiation.favor-parameter=false # Whether a request parameter ("format" by default) should be used to determine the requested media type.
 spring.mvc.contentnegotiation.favor-path-extension=false # Whether the path extension in the URL path should be used to determine the requested media type.
@@ -492,8 +497,10 @@ spring.mvc.static-path-pattern=/** # Path pattern used for static resources.
 spring.mvc.throw-exception-if-no-handler-found=false # Whether a "NoHandlerFoundException" should be thrown if no Handler was found to process a request.
 spring.mvc.view.prefix= # Spring MVC view prefix.
 spring.mvc.view.suffix= # Spring MVC view suffix.
+```
 
-# SPRING RESOURCES HANDLING (ResourceProperties)
+###### SPRING RESOURCES HANDLING (ResourceProperties)
+```java
 spring.resources.add-mappings=true # Whether to enable default resource handling.
 spring.resources.cache.cachecontrol.cache-private= # Indicate that the response message is intended for a single user and must not be stored by a shared cache.
 spring.resources.cache.cachecontrol.cache-public= # Indicate that any cache may store the response.
@@ -517,32 +524,44 @@ spring.resources.chain.strategy.fixed.enabled=false # Whether to enable the fixe
 spring.resources.chain.strategy.fixed.paths=/** # Comma-separated list of patterns to apply to the fixed Version Strategy.
 spring.resources.chain.strategy.fixed.version= # Version string to use for the fixed Version Strategy.
 spring.resources.static-locations=classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/ # Locations of static resources.
+```
 
-# SPRING SESSION (SessionProperties)
+###### SPRING SESSION (SessionProperties)
+```java
 spring.session.store-type= # Session store type.
 spring.session.timeout= # Session timeout. If a duration suffix is not specified, seconds will be used.
 spring.session.servlet.filter-order=-2147483598 # Session repository filter order.
 spring.session.servlet.filter-dispatcher-types=async,error,request # Session repository filter dispatcher types.
+```
 
-# SPRING SESSION HAZELCAST (HazelcastSessionProperties)
+###### SPRING SESSION HAZELCAST (HazelcastSessionProperties)
+```java
 spring.session.hazelcast.flush-mode=on-save # Sessions flush mode.
 spring.session.hazelcast.map-name=spring:session:sessions # Name of the map used to store sessions.
+```
 
-# SPRING SESSION JDBC (JdbcSessionProperties)
+###### SPRING SESSION JDBC (JdbcSessionProperties)
+```java
 spring.session.jdbc.cleanup-cron=0 * * * * * # Cron expression for expired session cleanup job.
 spring.session.jdbc.initialize-schema=embedded # Database schema initialization mode.
 spring.session.jdbc.schema=classpath:org/springframework/session/jdbc/schema-@@platform@@.sql # Path to the SQL file to use to initialize the database schema.
 spring.session.jdbc.table-name=SPRING_SESSION # Name of the database table used to store sessions.
+```
 
-# SPRING SESSION MONGODB (MongoSessionProperties)
+###### SPRING SESSION MONGODB (MongoSessionProperties)
+```java
 spring.session.mongodb.collection-name=sessions # Collection name used to store sessions.
+```
 
-# SPRING SESSION REDIS (RedisSessionProperties)
+###### SPRING SESSION REDIS (RedisSessionProperties)
+```java
 spring.session.redis.cleanup-cron=0 * * * * * # Cron expression for expired session cleanup job.
 spring.session.redis.flush-mode=on-save # Sessions flush mode.
 spring.session.redis.namespace=spring:session # Namespace for keys used to store sessions.
+```
 
-# THYMELEAF (ThymeleafAutoConfiguration)
+###### THYMELEAF (ThymeleafAutoConfiguration)
+```java
 spring.thymeleaf.cache=true # Whether to enable template caching.
 spring.thymeleaf.check-template=true # Whether to check that the template exists before rendering it.
 spring.thymeleaf.check-template-location=true # Whether to check that the templates location exists.
@@ -562,43 +581,54 @@ spring.thymeleaf.servlet.produce-partial-output-while-processing=true # Whether 
 spring.thymeleaf.suffix=.html # Suffix that gets appended to view names when building a URL.
 spring.thymeleaf.template-resolver-order= # Order of the template resolver in the chain.
 spring.thymeleaf.view-names= # Comma-separated list of view names (patterns allowed) that can be resolved.
+```
 
-# SPRING WEBFLUX (WebFluxProperties)
+###### SPRING WEBFLUX (WebFluxProperties)
+```java
 spring.webflux.date-format= # Date format to use. For instance, `dd/MM/yyyy`.
 spring.webflux.hiddenmethod.filter.enabled=true # Whether to enable Spring's HiddenHttpMethodFilter.
 spring.webflux.static-path-pattern=/** # Path pattern used for static resources.
+```
 
-# SPRING WEB SERVICES (WebServicesProperties)
+###### SPRING WEB SERVICES (WebServicesProperties)
+```java
 spring.webservices.path=/services # Path that serves as the base URI for the services.
 spring.webservices.servlet.init= # Servlet init parameters to pass to Spring Web Services.
 spring.webservices.servlet.load-on-startup=-1 # Load on startup priority of the Spring Web Services servlet.
 spring.webservices.wsdl-locations= # Comma-separated list of locations of WSDLs and accompanying XSDs to be exposed as beans.
+```
 
-
-# ----------------------------------------
-# SECURITY PROPERTIES
-# ----------------------------------------
-# SECURITY (SecurityProperties)
+#### ----------------------------------------
+#### SECURITY PROPERTIES
+#### ----------------------------------------
+#### SECURITY (SecurityProperties)
+```java
 spring.security.filter.order=-100 # Security filter chain order.
 spring.security.filter.dispatcher-types=async,error,request # Security filter chain dispatcher types.
 spring.security.user.name=user # Default user name.
 spring.security.user.password= # Password for the default user name.
 spring.security.user.roles= # Granted roles for the default user name.
+```
 
-# SECURITY OAUTH2 CLIENT (OAuth2ClientProperties)
+###### SECURITY OAUTH2 CLIENT (OAuth2ClientProperties)
+```java
 spring.security.oauth2.client.provider.*= # OAuth provider details.
 spring.security.oauth2.client.registration.*= # OAuth client registrations.
+```
 
-# SECURITY OAUTH2 RESOURCE SERVER (OAuth2ResourceServerProperties)
+###### SECURITY OAUTH2 RESOURCE SERVER (OAuth2ResourceServerProperties)
+```java
 spring.security.oauth2.resourceserver.jwt.jwk-set-uri= # JSON Web Key URI to use to verify the JWT token.
 spring.security.oauth2.resourceserver.jwt.jws-algorithm=RS256 # JSON Web Algorithm used for verifying the digital signatures.
 spring.security.oauth2.resourceserver.jwt.issuer-uri= # URI that an OpenID Connect Provider asserts as its Issuer Identifier.
+```
 
-# ----------------------------------------
-# DATA PROPERTIES
-# ----------------------------------------
+#### ----------------------------------------
+#### DATA PROPERTIES
+#### ----------------------------------------
 
-# FLYWAY (FlywayProperties)
+###### FLYWAY (FlywayProperties)
+```java
 spring.flyway.baseline-description=<< Flyway Baseline >> # Description to tag an existing schema with when applying a baseline.
 spring.flyway.baseline-on-migrate=false # Whether to automatically call baseline when migrating a non-empty schema.
 spring.flyway.baseline-version=1 # Version to tag an existing schema with when executing baseline.
@@ -635,8 +665,10 @@ spring.flyway.target= # Target version up to which migrations should be consider
 spring.flyway.url= # JDBC url of the database to migrate. If not set, the primary configured data source is used.
 spring.flyway.user= # Login user of the database to migrate.
 spring.flyway.validate-on-migrate=true # Whether to automatically call validate when performing a migration.
+```
 
-# LIQUIBASE (LiquibaseProperties)
+###### LIQUIBASE (LiquibaseProperties)
+```java
 spring.liquibase.change-log=classpath:/db/changelog/db.changelog-master.yaml # Change log configuration path.
 spring.liquibase.check-change-log-location=true # Whether to check that the change log location exists.
 spring.liquibase.contexts= # Comma-separated list of runtime contexts to use.
@@ -654,8 +686,10 @@ spring.liquibase.rollback-file= # File to which rollback SQL is written when an 
 spring.liquibase.test-rollback-on-update=false # Whether rollback should be tested before update is performed.
 spring.liquibase.url= # JDBC URL of the database to migrate. If not set, the primary configured data source is used.
 spring.liquibase.user= # Login user of the database to migrate.
+```
 
-# COUCHBASE (CouchbaseProperties)
+###### COUCHBASE (CouchbaseProperties)
+```java
 spring.couchbase.bootstrap-hosts= # Couchbase nodes (host or IP address) to bootstrap from.
 spring.couchbase.bucket.name=default # Name of the bucket to connect to.
 spring.couchbase.bucket.password=  # Password of the bucket.
@@ -672,6 +706,7 @@ spring.couchbase.env.timeouts.key-value=2500ms # Blocking operations performed o
 spring.couchbase.env.timeouts.query=7500ms # N1QL query operations timeout.
 spring.couchbase.env.timeouts.socket-connect=1000ms # Socket connect connections timeout.
 spring.couchbase.env.timeouts.view=7500ms # Regular and geospatial view operations timeout.
+```
 
 # DAO (PersistenceExceptionTranslationAutoConfiguration)
 spring.dao.exceptiontranslation.enabled=true # Whether to enable the PersistenceExceptionTranslationPostProcessor.

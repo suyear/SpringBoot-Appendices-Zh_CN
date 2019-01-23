@@ -901,7 +901,8 @@ spring.jdbc.template.max-rows=-1 # Maximum number of rows.
 spring.jdbc.template.query-timeout= # Query timeout. Default is to use the JDBC driver's default configuration. If a duration suffix is not specified, seconds will be used.
 ```
 
-# JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
+###### JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
+```java
 spring.data.jpa.repositories.bootstrap-mode=default # Bootstrap mode for JPA repositories.
 spring.data.jpa.repositories.enabled=true # Whether to enable JPA repositories.
 spring.jpa.database= # Target database to operate on, auto-detected by default. Can be alternatively set using the "databasePlatform" property.
@@ -915,13 +916,17 @@ spring.jpa.mapping-resources= # Mapping resources (equivalent to "mapping-file" 
 spring.jpa.open-in-view=true # Register OpenEntityManagerInViewInterceptor. Binds a JPA EntityManager to the thread for the entire processing of the request.
 spring.jpa.properties.*= # Additional native properties to set on the JPA provider.
 spring.jpa.show-sql=false # Whether to enable logging of SQL statements.
+```
 
-# JTA (JtaAutoConfiguration)
+###### JTA (JtaAutoConfiguration)
+```java
 spring.jta.enabled=true # Whether to enable JTA support.
 spring.jta.log-dir= # Transaction logs directory.
 spring.jta.transaction-manager-id= # Transaction manager unique identifier.
+```
 
-# ATOMIKOS (AtomikosProperties)
+###### ATOMIKOS (AtomikosProperties)
+```java
 spring.jta.atomikos.connectionfactory.borrow-connection-timeout=30 # Timeout, in seconds, for borrowing connections from the pool.
 spring.jta.atomikos.connectionfactory.ignore-session-transacted-flag=true # Whether to ignore the transacted flag when creating session.
 spring.jta.atomikos.connectionfactory.local-transaction-mode=false # Whether local transactions are desired.
@@ -966,8 +971,10 @@ spring.jta.atomikos.properties.serial-jta-transactions=true # Whether sub-transa
 spring.jta.atomikos.properties.service= # Transaction manager implementation that should be started.
 spring.jta.atomikos.properties.threaded-two-phase-commit=false # Whether to use different (and concurrent) threads for two-phase commit on the participating resources.
 spring.jta.atomikos.properties.transaction-manager-unique-name= # The transaction manager's unique name.
+```
 
-# BITRONIX
+###### BITRONIX
+```java
 spring.jta.bitronix.connectionfactory.acquire-increment=1 # Number of connections to create when growing the pool.
 spring.jta.bitronix.connectionfactory.acquisition-interval=1 # Time, in seconds, to wait before trying to acquire a connection again after an invalid connection was acquired.
 spring.jta.bitronix.connectionfactory.acquisition-timeout=30 # Timeout, in seconds, for acquiring connections from the pool.
@@ -1039,15 +1046,19 @@ spring.jta.bitronix.properties.resource-configuration-filename= # ResourceLoader
 spring.jta.bitronix.properties.server-id= # ASCII ID that must uniquely identify this TM instance. Defaults to the machine's IP address.
 spring.jta.bitronix.properties.skip-corrupted-logs=false # Skip corrupted transactions log entries.
 spring.jta.bitronix.properties.warn-about-zero-resource-transaction=true # Whether to log a warning for transactions executed without a single enlisted resource.
+```
 
-# EMBEDDED MONGODB (EmbeddedMongoProperties)
+###### EMBEDDED MONGODB (EmbeddedMongoProperties)
+```java
 spring.mongodb.embedded.features=sync_delay # Comma-separated list of features to enable.
 spring.mongodb.embedded.storage.database-dir= # Directory used for data storage.
 spring.mongodb.embedded.storage.oplog-size= # Maximum size of the oplog.
 spring.mongodb.embedded.storage.repl-set-name= # Name of the replica set.
 spring.mongodb.embedded.version=3.5.5 # Version of Mongo to use.
+```
 
-# REDIS (RedisProperties)
+###### REDIS (RedisProperties)
+```java
 spring.redis.cluster.max-redirects= # Maximum number of redirects to follow when executing commands across the cluster.
 spring.redis.cluster.nodes= # Comma-separated list of "host:port" pairs to bootstrap from.
 spring.redis.database=0 # Database index used by the connection factory.
@@ -1068,18 +1079,21 @@ spring.redis.sentinel.master= # Name of the Redis server.
 spring.redis.sentinel.nodes= # Comma-separated list of "host:port" pairs.
 spring.redis.ssl=false # Whether to enable SSL support.
 spring.redis.timeout= # Connection timeout.
+```
 
-# TRANSACTION (TransactionProperties)
+###### TRANSACTION (TransactionProperties)
+```java
 spring.transaction.default-timeout= # Default transaction timeout. If a duration suffix is not specified, seconds will be used.
 spring.transaction.rollback-on-commit-failure= # Whether to roll back on commit failures.
+```
 
 
+#### ----------------------------------------
+#### INTEGRATION PROPERTIES
+#### ----------------------------------------
 
-# ----------------------------------------
-# INTEGRATION PROPERTIES
-# ----------------------------------------
-
-# ACTIVEMQ (ActiveMQProperties)
+###### ACTIVEMQ (ActiveMQProperties)
+```java
 spring.activemq.broker-url= # URL of the ActiveMQ broker. Auto-generated by default.
 spring.activemq.close-timeout=15s # Time to wait before considering a close complete.
 spring.activemq.in-memory=true # Whether the default broker URL should be in memory. Ignored if an explicit broker has been specified.
@@ -1097,8 +1111,10 @@ spring.activemq.pool.max-connections=1 # Maximum number of pooled connections.
 spring.activemq.pool.max-sessions-per-connection=500 # Maximum number of pooled sessions per connection in the pool.
 spring.activemq.pool.time-between-expiration-check=-1ms # Time to sleep between runs of the idle connection eviction thread. When negative, no idle connection eviction thread runs.
 spring.activemq.pool.use-anonymous-producers=true # Whether to use only one anonymous "MessageProducer" instance. Set it to false to create one "MessageProducer" every time one is required.
+```
 
-# ARTEMIS (ArtemisProperties)
+###### ARTEMIS (ArtemisProperties)
+```java
 spring.artemis.embedded.cluster-password= # Cluster password. Randomly generated on startup by default.
 spring.artemis.embedded.data-directory= # Journal file directory. Not necessary if persistence is turned off.
 spring.artemis.embedded.enabled=true # Whether to enable embedded mode if the Artemis server APIs are available.
@@ -1119,19 +1135,25 @@ spring.artemis.pool.time-between-expiration-check=-1ms # Time to sleep between r
 spring.artemis.pool.use-anonymous-producers=true # Whether to use only one anonymous "MessageProducer" instance. Set it to false to create one "MessageProducer" every time one is required.
 spring.artemis.port=61616 # Artemis broker port.
 spring.artemis.user= # Login user of the broker.
+```
 
-# SPRING BATCH (BatchProperties)
+###### SPRING BATCH (BatchProperties)
+```java
 spring.batch.initialize-schema=embedded # Database schema initialization mode.
 spring.batch.job.enabled=true # Execute all Spring Batch jobs in the context on startup.
 spring.batch.job.names= # Comma-separated list of job names to execute on startup (for instance, `job1,job2`). By default, all Jobs found in the context are executed.
 spring.batch.schema=classpath:org/springframework/batch/core/schema-@@platform@@.sql # Path to the SQL file to use to initialize the database schema.
 spring.batch.table-prefix= # Table prefix for all the batch meta-data tables.
+```
 
-# SPRING INTEGRATION (IntegrationProperties)
+###### SPRING INTEGRATION (IntegrationProperties)
+```java
 spring.integration.jdbc.initialize-schema=embedded # Database schema initialization mode.
 spring.integration.jdbc.schema=classpath:org/springframework/integration/jdbc/schema-@@platform@@.sql # Path to the SQL file to use to initialize the database schema.
+```
 
-# JMS (JmsProperties)
+###### JMS (JmsProperties)
+```java
 spring.jms.cache.consumers=false # Whether to cache message consumers.
 spring.jms.cache.enabled=true # Whether to cache sessions.
 spring.jms.cache.producers=true # Whether to cache message producers.
@@ -1149,8 +1171,10 @@ spring.jms.template.priority= # Priority of a message when sending. Enables QoS 
 spring.jms.template.qos-enabled= # Whether to enable explicit QoS (Quality of Service) when sending a message.
 spring.jms.template.receive-timeout= # Timeout to use for receive calls.
 spring.jms.template.time-to-live= # Time-to-live of a message when sending. Enables QoS (Quality of Service) when set.
+```
 
-# APACHE KAFKA (KafkaProperties)
+###### APACHE KAFKA (KafkaProperties)
+```java
 spring.kafka.admin.client-id= # ID to pass to the server when making requests. Used for server-side logging.
 spring.kafka.admin.fail-fast=false # Whether to fail fast if the broker is not available on startup.
 spring.kafka.admin.properties.*= # Additional admin-specific properties used to configure the client.
@@ -1245,8 +1269,10 @@ spring.kafka.streams.ssl.trust-store-password= # Store password for the trust st
 spring.kafka.streams.ssl.trust-store-type= # Type of the trust store.
 spring.kafka.streams.state-dir= # Directory location for the state store.
 spring.kafka.template.default-topic= # Default topic to which messages are sent.
+```
 
-# RABBIT (RabbitProperties)
+###### RABBIT (RabbitProperties)
+```java
 spring.rabbitmq.addresses= # Comma-separated list of addresses to which the client should connect.
 spring.rabbitmq.cache.channel.checkout-timeout= # Duration to wait to obtain a channel if the cache size has been reached.
 spring.rabbitmq.cache.channel.size= # Number of channels to retain in the cache.
@@ -1312,13 +1338,14 @@ spring.rabbitmq.template.retry.multiplier=1 # Multiplier to apply to the previou
 spring.rabbitmq.template.routing-key= # Value of a default routing key to use for send operations.
 spring.rabbitmq.username=guest # Login user to authenticate to the broker.
 spring.rabbitmq.virtual-host= # Virtual host to use when connecting to the broker.
+```
 
+#### ----------------------------------------
+#### ACTUATOR PROPERTIES
+#### ----------------------------------------
 
-# ----------------------------------------
-# ACTUATOR PROPERTIES
-# ----------------------------------------
-
-# MANAGEMENT HTTP SERVER (ManagementServerProperties)
+###### MANAGEMENT HTTP SERVER (ManagementServerProperties)
+```java
 management.server.add-application-context-header=false # Add the "X-Application-Context" HTTP header in each response.
 management.server.address= # Network address to which the management endpoints should bind. Requires a custom management.server.port.
 management.server.port= # Management endpoint HTTP port (uses the same port as the application by default). Configure a different port to use management-specific SSL.
@@ -1338,131 +1365,189 @@ management.server.ssl.trust-store= # Trust store that holds SSL certificates.
 management.server.ssl.trust-store-password= # Password used to access the trust store.
 management.server.ssl.trust-store-provider= # Provider for the trust store.
 management.server.ssl.trust-store-type= # Type of the trust store.
+```
 
-# CLOUDFOUNDRY
+###### CLOUDFOUNDRY
+```java
 management.cloudfoundry.enabled=true # Whether to enable extended Cloud Foundry actuator endpoints.
 management.cloudfoundry.skip-ssl-validation=false # Whether to skip SSL verification for Cloud Foundry actuator endpoint security calls.
+```
 
-# ENDPOINTS GENERAL CONFIGURATION
+###### ENDPOINTS GENERAL CONFIGURATION
+```java
 management.endpoints.enabled-by-default= # Whether to enable or disable all endpoints by default.
+```
 
-# ENDPOINTS JMX CONFIGURATION (JmxEndpointProperties)
+###### ENDPOINTS JMX CONFIGURATION (JmxEndpointProperties)
+```java
 management.endpoints.jmx.domain=org.springframework.boot # Endpoints JMX domain name. Fallback to 'spring.jmx.default-domain' if set.
 management.endpoints.jmx.exposure.include=* # Endpoint IDs that should be included or '*' for all.
 management.endpoints.jmx.exposure.exclude= # Endpoint IDs that should be excluded or '*' for all.
 management.endpoints.jmx.static-names= # Additional static properties to append to all ObjectNames of MBeans representing Endpoints.
+```
 
-# ENDPOINTS WEB CONFIGURATION (WebEndpointProperties)
+###### ENDPOINTS WEB CONFIGURATION (WebEndpointProperties)
+```java
 management.endpoints.web.exposure.include=health,info # Endpoint IDs that should be included or '*' for all.
 management.endpoints.web.exposure.exclude= # Endpoint IDs that should be excluded or '*' for all.
 management.endpoints.web.base-path=/actuator # Base path for Web endpoints. Relative to server.servlet.context-path or management.server.servlet.context-path if management.server.port is configured.
 management.endpoints.web.path-mapping= # Mapping between endpoint IDs and the path that should expose them.
+```
 
-# ENDPOINTS CORS CONFIGURATION (CorsEndpointProperties)
+###### ENDPOINTS CORS CONFIGURATION (CorsEndpointProperties)
+```java
 management.endpoints.web.cors.allow-credentials= # Whether credentials are supported. When not set, credentials are not supported.
 management.endpoints.web.cors.allowed-headers= # Comma-separated list of headers to allow in a request. '*' allows all headers.
 management.endpoints.web.cors.allowed-methods= # Comma-separated list of methods to allow. '*' allows all methods. When not set, defaults to GET.
 management.endpoints.web.cors.allowed-origins= # Comma-separated list of origins to allow. '*' allows all origins. When not set, CORS support is disabled.
 management.endpoints.web.cors.exposed-headers= # Comma-separated list of headers to include in a response.
 management.endpoints.web.cors.max-age=1800s # How long the response from a pre-flight request can be cached by clients. If a duration suffix is not specified, seconds will be used.
+```
 
-# AUDIT EVENTS ENDPOINT (AuditEventsEndpoint)
+###### AUDIT EVENTS ENDPOINT (AuditEventsEndpoint)
+```java
 management.endpoint.auditevents.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.auditevents.enabled=true # Whether to enable the auditevents endpoint.
+```
 
-# BEANS ENDPOINT (BeansEndpoint)
+###### BEANS ENDPOINT (BeansEndpoint)
+```java
 management.endpoint.beans.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.beans.enabled=true # Whether to enable the beans endpoint.
+```
 
-# CACHES ENDPOINT (CachesEndpoint)
+####### CACHES ENDPOINT (CachesEndpoint)
+```java
 management.endpoint.caches.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.caches.enabled=true # Whether to enable the caches endpoint.
+```
 
-# CONDITIONS REPORT ENDPOINT (ConditionsReportEndpoint)
+####### CONDITIONS REPORT ENDPOINT (ConditionsReportEndpoint)
+```java
 management.endpoint.conditions.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.conditions.enabled=true # Whether to enable the conditions endpoint.
+```
 
-# CONFIGURATION PROPERTIES REPORT ENDPOINT (ConfigurationPropertiesReportEndpoint, ConfigurationPropertiesReportEndpointProperties)
+###### CONFIGURATION PROPERTIES REPORT ENDPOINT (ConfigurationPropertiesReportEndpoint, ConfigurationPropertiesReportEndpointProperties)
+```java
 management.endpoint.configprops.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.configprops.enabled=true # Whether to enable the configprops endpoint.
 management.endpoint.configprops.keys-to-sanitize=password,secret,key,token,.*credentials.*,vcap_services,sun.java.command # Keys that should be sanitized. Keys can be simple strings that the property ends with or regular expressions.
+```
 
-# ENVIRONMENT ENDPOINT (EnvironmentEndpoint, EnvironmentEndpointProperties)
+###### ENVIRONMENT ENDPOINT (EnvironmentEndpoint, EnvironmentEndpointProperties)
+```java
 management.endpoint.env.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.env.enabled=true # Whether to enable the env endpoint.
 management.endpoint.env.keys-to-sanitize=password,secret,key,token,.*credentials.*,vcap_services,sun.java.command # Keys that should be sanitized. Keys can be simple strings that the property ends with or regular expressions.
+```
 
-# FLYWAY ENDPOINT (FlywayEndpoint)
+###### FLYWAY ENDPOINT (FlywayEndpoint)
+```java
 management.endpoint.flyway.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.flyway.enabled=true # Whether to enable the flyway endpoint.
+```
 
-# HEALTH ENDPOINT (HealthEndpoint, HealthEndpointProperties)
+###### HEALTH ENDPOINT (HealthEndpoint, HealthEndpointProperties)
+```java
 management.endpoint.health.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.health.enabled=true # Whether to enable the health endpoint.
 management.endpoint.health.roles= # Roles used to determine whether or not a user is authorized to be shown details. When empty, all authenticated users are authorized.
 management.endpoint.health.show-details=never # When to show full health details.
+```
 
-# HEAP DUMP ENDPOINT (HeapDumpWebEndpoint)
+###### HEAP DUMP ENDPOINT (HeapDumpWebEndpoint)
+```java
 management.endpoint.heapdump.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.heapdump.enabled=true # Whether to enable the heapdump endpoint.
+```
 
-# HTTP TRACE ENDPOINT (HttpTraceEndpoint)
+###### HTTP TRACE ENDPOINT (HttpTraceEndpoint)
+```java
 management.endpoint.httptrace.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.httptrace.enabled=true # Whether to enable the httptrace endpoint.
+```
 
-# INFO ENDPOINT (InfoEndpoint)
+###### INFO ENDPOINT (InfoEndpoint)
+```java
 info= # Arbitrary properties to add to the info endpoint.
 management.endpoint.info.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.info.enabled=true # Whether to enable the info endpoint.
+```
 
-# INTEGRATION GRAPH ENDPOINT (IntegrationGraphEndpoint)
+###### INTEGRATION GRAPH ENDPOINT (IntegrationGraphEndpoint)
+```java
 management.endpoint.integrationgraph.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.integrationgraph.enabled=true # Whether to enable the integrationgraph endpoint.
+```
 
-# JOLOKIA ENDPOINT (JolokiaProperties)
+###### JOLOKIA ENDPOINT (JolokiaProperties)
+```java
 management.endpoint.jolokia.config.*= # Jolokia settings. Refer to the documentation of Jolokia for more details.
 management.endpoint.jolokia.enabled=true # Whether to enable the jolokia endpoint.
+```
 
-# LIQUIBASE ENDPOINT (LiquibaseEndpoint)
+###### LIQUIBASE ENDPOINT (LiquibaseEndpoint)
+```java
 management.endpoint.liquibase.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.liquibase.enabled=true # Whether to enable the liquibase endpoint.
+```
 
-# LOG FILE ENDPOINT (LogFileWebEndpoint, LogFileWebEndpointProperties)
+###### LOG FILE ENDPOINT (LogFileWebEndpoint, LogFileWebEndpointProperties)
+```java
 management.endpoint.logfile.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.logfile.enabled=true # Whether to enable the logfile endpoint.
 management.endpoint.logfile.external-file= # External Logfile to be accessed. Can be used if the logfile is written by output redirect and not by the logging system itself.
+```
 
-# LOGGERS ENDPOINT (LoggersEndpoint)
+###### LOGGERS ENDPOINT (LoggersEndpoint)
+```java
 management.endpoint.loggers.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.loggers.enabled=true # Whether to enable the loggers endpoint.
+```
 
-# REQUEST MAPPING ENDPOINT  (MappingsEndpoint)
+###### REQUEST MAPPING ENDPOINT  (MappingsEndpoint)
+```java
 management.endpoint.mappings.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.mappings.enabled=true # Whether to enable the mappings endpoint.
+```
 
-# METRICS ENDPOINT (MetricsEndpoint)
+###### METRICS ENDPOINT (MetricsEndpoint)
+```java
 management.endpoint.metrics.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.metrics.enabled=true # Whether to enable the metrics endpoint.
+```
 
-# PROMETHEUS ENDPOINT (PrometheusScrapeEndpoint)
+###### PROMETHEUS ENDPOINT (PrometheusScrapeEndpoint)
+```java
 management.endpoint.prometheus.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.prometheus.enabled=true # Whether to enable the prometheus endpoint.
+```
 
-# SCHEDULED TASKS ENDPOINT (ScheduledTasksEndpoint)
+###### SCHEDULED TASKS ENDPOINT (ScheduledTasksEndpoint)
+```java
 management.endpoint.scheduledtasks.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.scheduledtasks.enabled=true # Whether to enable the scheduledtasks endpoint.
+```
 
-# SESSIONS ENDPOINT (SessionsEndpoint)
+###### SESSIONS ENDPOINT (SessionsEndpoint)
+```java
 management.endpoint.sessions.enabled=true # Whether to enable the sessions endpoint.
+```
 
-# SHUTDOWN ENDPOINT (ShutdownEndpoint)
+###### SHUTDOWN ENDPOINT (ShutdownEndpoint)
+```java
 management.endpoint.shutdown.enabled=false # Whether to enable the shutdown endpoint.
+```
 
-# THREAD DUMP ENDPOINT (ThreadDumpEndpoint)
+###### THREAD DUMP ENDPOINT (ThreadDumpEndpoint)
+```java
 management.endpoint.threaddump.cache.time-to-live=0ms # Maximum time that a response can be cached.
 management.endpoint.threaddump.enabled=true # Whether to enable the threaddump endpoint.
+```
 
-# HEALTH INDICATORS
+###### HEALTH INDICATORS
+```java
 management.health.db.enabled=true # Whether to enable database health check.
 management.health.cassandra.enabled=true # Whether to enable Cassandra health check.
 management.health.couchbase.enabled=true # Whether to enable Couchbase health check.
@@ -1484,19 +1569,25 @@ management.health.redis.enabled=true # Whether to enable Redis health check.
 management.health.solr.enabled=true # Whether to enable Solr health check.
 management.health.status.http-mapping= # Mapping of health statuses to HTTP status codes. By default, registered health statuses map to sensible defaults (for example, UP maps to 200).
 management.health.status.order=DOWN,OUT_OF_SERVICE,UP,UNKNOWN # Comma-separated list of health statuses in order of severity.
+```
 
-# HTTP TRACING (HttpTraceProperties)
+###### HTTP TRACING (HttpTraceProperties)
+```java
 management.trace.http.enabled=true # Whether to enable HTTP request-response tracing.
 management.trace.http.include=request-headers,response-headers,cookies,errors # Items to be included in the trace.
+```
 
-# INFO CONTRIBUTORS (InfoContributorProperties)
+###### INFO CONTRIBUTORS (InfoContributorProperties)
+```java
 management.info.build.enabled=true # Whether to enable build info.
 management.info.defaults.enabled=true # Whether to enable default info contributors.
 management.info.env.enabled=true # Whether to enable environment info.
 management.info.git.enabled=true # Whether to enable git info.
 management.info.git.mode=simple # Mode to use to expose git information.
+```
 
-# METRICS
+###### METRICS
+```java
 management.metrics.distribution.maximum-expected-value.*= # Maximum value that meter IDs starting-with the specified name are expected to observe.
 management.metrics.distribution.minimum-expected-value.*= # Minimum value that meter IDs starting-with the specified name are expected to observe.
 management.metrics.distribution.percentiles.*= # Specific computed non-aggregable percentiles to ship to the backend for meter IDs starting-with the specified name.
@@ -1669,13 +1760,14 @@ management.metrics.web.client.requests-metric-name=http.client.requests # Name o
 management.metrics.web.server.auto-time-requests=true # Whether requests handled by Spring MVC, WebFlux or Jersey should be automatically timed.
 management.metrics.web.server.max-uri-tags=100 # Maximum number of unique URI tag values allowed. After the max number of tag values is reached, metrics with additional tag values are denied by filter.
 management.metrics.web.server.requests-metric-name=http.server.requests # Name of the metric for received requests.
+```
 
+#### ----------------------------------------
+#### DEVTOOLS PROPERTIES
+#### ----------------------------------------
 
-# ----------------------------------------
-# DEVTOOLS PROPERTIES
-# ----------------------------------------
-
-# DEVTOOLS (DevToolsProperties)
+###### DEVTOOLS (DevToolsProperties)
+```java
 spring.devtools.add-properties=true # Whether to enable development property defaults.
 spring.devtools.livereload.enabled=true # Whether to enable a livereload.com-compatible server.
 spring.devtools.livereload.port=35729 # Server port.
@@ -1687,19 +1779,22 @@ spring.devtools.restart.log-condition-evaluation-delta=true # Whether to log the
 spring.devtools.restart.poll-interval=1s # Amount of time to wait between polling for classpath changes.
 spring.devtools.restart.quiet-period=400ms # Amount of quiet time required without any classpath changes before a restart is triggered.
 spring.devtools.restart.trigger-file= # Name of a specific file that, when changed, triggers the restart check. If not specified, any classpath file change triggers the restart.
+```
 
-# REMOTE DEVTOOLS (RemoteDevToolsProperties)
+###### REMOTE DEVTOOLS (RemoteDevToolsProperties)
+```java
 spring.devtools.remote.context-path=/.~~spring-boot!~ # Context path used to handle the remote connection.
 spring.devtools.remote.proxy.host= # The host of the proxy to use to connect to the remote application.
 spring.devtools.remote.proxy.port= # The port of the proxy to use to connect to the remote application.
 spring.devtools.remote.restart.enabled=true # Whether to enable remote restart.
 spring.devtools.remote.secret= # A shared secret required to establish a connection (required to enable remote support).
 spring.devtools.remote.secret-header-name=X-AUTH-TOKEN # HTTP header used to transfer the shared secret.
+```
 
-
-# ----------------------------------------
-# TESTING PROPERTIES
-# ----------------------------------------
-
+#### ----------------------------------------
+#### TESTING PROPERTIES
+#### ----------------------------------------
+```java
 spring.test.database.replace=any # Type of existing DataSource to replace.
 spring.test.mockmvc.print=default # MVC Print option.
+```
